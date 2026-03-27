@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohamed Ebeid — Web Developer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">ME<span class="dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="grid-lines"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 hero-content">
+        <p class="hero-tag"><span class="tag-dot"></span> Available for work</p>
+        <h1 class="hero-title">
+          Mohamed<br/>
+          <span class="outline-text">Ebeid</span>
+        </h1>
+        <p class="hero-sub">Web Developer — Building fast, clean & modern digital experiences.</p>
+        <div class="hero-btns d-flex flex-wrap gap-3 mb-5">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="contact.html" class="btn btn-ghost">Get in Touch →</a>
+        </div>
+        <div class="hero-stats d-flex align-items-center gap-4">
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Projects Done</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Dedication</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-visual d-none d-lg-flex justify-content-center">
+        <div class="code-card">
+          <div class="card-top">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="card-title">portfolio.js</span>
+          </div>
+          <pre class="card-code"><code><span class="c-purple">const</span> <span class="c-green">developer</span> = {
+  <span class="c-blue">name</span>: <span class="c-yellow">"Mohamed Ebeid"</span>,
+  <span class="c-blue">role</span>: <span class="c-yellow">"Web Developer"</span>,
+  <span class="c-blue">skills</span>: [
+    <span class="c-yellow">"HTML"</span>, <span class="c-yellow">"CSS"</span>,
+    <span class="c-yellow">"JavaScript"</span>,
+    <span class="c-yellow">"Bootstrap"</span>
+  ],
+  <span class="c-blue">available</span>: <span class="c-purple">true</span>
+};</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-strip">
+  <div class="strip-inner">
+    <div class="strip-track">
+      <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>Tailwind</span><span>Git</span><span>GitHub</span><span>Responsive Design</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>Tailwind</span><span>Git</span><span>GitHub</span><span>Responsive Design</span>
+    </div>
+  </div>
+</section>
+
+<section class="services section-pad">
+  <div class="container">
+    <p class="section-tag">What I Do</p>
+    <h2 class="section-title">Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Frontend Development</h3>
+          <p>Building fast, responsive websites using HTML, CSS, and JavaScript with clean, maintainable code.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>UI Design</h3>
+          <p>Crafting visually appealing interfaces that provide smooth and intuitive user experiences.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Responsive Design</h3>
+          <p>Every website I build works perfectly across all screen sizes — mobile, tablet, and desktop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box text-center">
+      <h2>Let's Build Something <span class="accent">Great</span> Together</h2>
+      <p>Have a project in mind? I'd love to hear about it.</p>
+      <a href="contact.html" class="btn btn-primary">Start a Project</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo">ME<span class="dot">.</span></span>
+    <p>© 2026 Mohamed Ebeid. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/mohamedebeid77" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/mohamed-ebeid-307400301/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
