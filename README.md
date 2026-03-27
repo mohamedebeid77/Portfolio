@@ -24,6 +24,7 @@ https://mohamedebeid77.github.io/Portfolio/
 - Interactive project cards
 - Back-to-top button
 
+##  Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/mohamedebeid77/Portfolio.git
