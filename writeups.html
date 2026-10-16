@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Writeups — Mohamed Ebeid</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <meta name="description" content="Practical notes on frontend development, responsive design, and web security by Mohamed Ebeid."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="writeups.css"/>
+</head>
+<body class="writeups-page">
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">ME<span class="dot">.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="writeups.html" class="active" aria-current="page">Writeups</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main-content">
+  <header class="notebook-header">
+    <div class="hero-bg" aria-hidden="true"><div class="grid-lines"></div><div class="glow glow-1"></div></div>
+    <div class="container notebook-intro">
+      <p class="notebook-eyebrow"><span></span> THE DEVELOPER’S NOTEBOOK</p>
+      <h1>Ideas, explored.<br/><span class="outline-text">Lessons, written.</span></h1>
+      <div class="notebook-intro-bottom">
+        <p>Notes from building for the web and learning how to keep it secure.<br class="d-none d-md-block"/> A little code, a little curiosity, and what’s learned along the way.</p>
+        <a class="notebook-jump" href="#writeups">Explore the writeups <span aria-hidden="true">↘</span></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="notebook-section container" id="writeups" aria-labelledby="writeups-heading">
+    <div class="notebook-section-heading">
+      <h2 id="writeups-heading">Writeups <span> / 01—03</span></h2>
+      <span class="notebook-small">LEARN. BUILD. DOCUMENT.</span>
+    </div>
+    <div class="notebook-toolbar" hidden>
+      <div class="notebook-filters" role="group" aria-label="Filter writeups by topic">
+        <button type="button" class="selected" data-topic="all" aria-pressed="true">All notes <span>03</span></button>
+        <button type="button" data-topic="development" aria-pressed="false">Development <span>02</span></button>
+        <button type="button" data-topic="security" aria-pressed="false">Security <span>01</span></button>
+      </div>
+      <p id="writeup-count" role="status" aria-live="polite">3 writeups</p>
+    </div>
+
+    <div class="notebook-grid">
+      <article class="note-card note-featured" data-topic="development">
+        <details id="responsive-layouts">
+          <summary>
+            <div class="note-preview">
+              <div class="note-meta"><span class="note-category">DEVELOPMENT</span><span>01 / FIELD NOTES</span></div>
+              <h3>Small screens.<br/>Thoughtful layouts.</h3>
+              <p>A practical starting point for responsive interfaces: flexible grids, readable content, and breakpoints that follow the design.</p>
+              <span class="note-read">Read writeup <span aria-hidden="true">↗</span></span>
+            </div>
+            <div class="note-code-art" aria-hidden="true">
+              <div class="note-code-bar"><span>● ● ●</span> layout.css</div>
+              <pre><span class="code-comment">/* room to grow */</span>
+<span class="code-green">.grid</span> {
+  display: grid;
+  gap: <span class="code-yellow">1.5rem</span>;
+  grid-template-columns:
+    repeat(auto-fit,
+      minmax(min(<span class="code-yellow">100%, 18rem</span>), 1fr));
+}</pre>
+              <div class="note-mini-grid"><span></span><span></span><span></span></div>
+              <span class="note-code-caption">FLEXIBLE BY DEFAULT.</span>
+            </div>
+          </summary>
+          <div class="note-body">
+            <h4>Start with the smallest layout</h4>
+            <p>Keep the first version in a single column. Set a comfortable line height, let images shrink with <code>max-width: 100%</code>, and avoid fixed widths on content containers. A layout that works at 320px is a useful baseline.</p>
+            <h4>Let content decide the columns</h4>
+            <p>CSS Grid can add columns when there is enough room. The inner <code>min()</code> in this example lets a card fit containers narrower than 18rem, while <code>1fr</code> shares the remaining space.</p>
+            <pre><code>.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}</code></pre>
+            <h4>Check the spaces between devices</h4>
+            <p>Resize slowly instead of checking only phone and desktop presets. Watch for long headings, crowded navigation, and horizontal scrolling. Add a breakpoint where the content needs it.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design">Further reading: responsive design on MDN ↗</a>
+          </div>
+        </details>
+      </article>
+
+      <article class="note-card" data-topic="security">
+        <details id="safer-dom-updates">
+          <summary>
+            <div class="note-preview">
+              <div class="note-meta"><span class="note-category security-category">WEB SECURITY</span><span>02 / FUNDAMENTALS</span></div>
+              <h3>A safer way to put text on a page.</h3>
+              <p>Why the way you update the DOM matters, and where textContent fits into preventing cross-site scripting.</p>
+              <span class="note-read">Read writeup <span aria-hidden="true">↗</span></span>
+            </div>
+          </summary>
+          <div class="note-body">
+            <h4>Keep plain text as plain text</h4>
+            <p>When displaying a name, a search query, or another untrusted string, use <code>textContent</code>. It inserts text without asking the browser to interpret it as HTML.</p>
+            <pre><code>const greeting = document.querySelector('#greeting');
+greeting.textContent = `Hello, ${displayName}`;</code></pre>
+            <h4>Know the boundary</h4>
+            <p>Assigning untrusted content to <code>innerHTML</code> can introduce cross-site scripting (XSS). If a feature requires rich HTML, use a maintained HTML sanitizer and a carefully chosen allowlist. Regular expressions are not a substitute for sanitization.</p>
+            <p><code>textContent</code> protects this text insertion point. URL attributes, server-rendered templates, and other contexts need their own validation and encoding. A Content Security Policy can add another layer of defense.</p>
+            <a href="https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html">Further reading: OWASP DOM XSS prevention ↗</a>
+          </div>
+        </details>
+      </article>
+
+      <article class="note-card" data-topic="development">
+        <details id="theme-tokens">
+          <summary>
+            <div class="note-preview">
+              <div class="note-meta"><span class="note-category">DEVELOPMENT</span><span>03 / CSS NOTES</span></div>
+              <h3>Two themes.<br/>One set of components.</h3>
+              <p>Using CSS custom properties to make dark and light themes easier to build, maintain, and read.</p>
+              <span class="note-read">Read writeup <span aria-hidden="true">↗</span></span>
+            </div>
+          </summary>
+          <div class="note-body">
+            <h4>Name colors by their role</h4>
+            <p>Tokens such as <code>--surface</code> and <code>--text</code> describe what a color does. Components use those tokens, and a theme changes their values in one place.</p>
+            <pre><code>:root {
+  --surface: #111114;
+  --text: #f0ece8;
+}
+.light-mode {
+  --surface: #efefec;
+  --text: #111114;
+}
+.card {
+  background: var(--surface);
+  color: var(--text);
+}</code></pre>
+            <h4>Test the whole interface</h4>
+            <p>Switch themes while checking body text, borders, code blocks, hover states, and keyboard focus. A bright accent that works on a dark surface may need a darker value on a light surface to stay readable.</p>
+            <p>Remember a visitor’s choice where storage is available, and consider their system color preference when they have not chosen a theme yet.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">Further reading: CSS custom properties on MDN ↗</a>
+          </div>
+        </details>
+      </article>
+    </div>
+    <div class="notebook-end"><span aria-hidden="true">✳</span><p>Always a work in progress.<br/><span>More notes as the learning continues.</span></p><a href="contact.html">Let’s exchange ideas ↗</a></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="logo">ME<span class="dot">.</span></span>
+    <p>© 2026 Mohamed Ebeid. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/mohamedebeid77" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/mohamed-ebeid-307400301/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+<script src="writeups.js"></script>
+</body>
+</html>
